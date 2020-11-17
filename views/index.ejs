@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Evaluacion 1</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+  <h1>Evaluacion 1</h1>
+  <p>Javascript</p>
+  
+  <form  method="POST" action= "/" >
+    
+    <div class="input">  
+      <label for="vale">VALE</label></br>
+      <input  type="text" value="<%=vale.id%>" placeholder="<%=vale.id%>" name="vale">
+    </div>
+    
+    <div class="input">
+      <label for="legajo">LEGAJO</label></br>
+      <select  name="legajo" >
+        
+        <% usuario.forEach(usuario => { %>
+          <option  value="<%=usuario.id%>" label="<%=usuario.legajo%>  <%=usuario.nombre%>"></option>
+          <%})%>
+        </select>
+        
+      </div>
+      
+      <div class="input">
+        <label for="codigoArticulo">Codigo</label> 
+        <input  id="codigoArticulo" type="number" name="codigoArticulo">
+        <button id="search" >Buscar articulos</button>
+      </div>
+      
+      <div class="input">
+        <table>
+          <tr>
+            <th>Seleccionar</th>
+            <th>Codigo</th>
+            <th>CodGaci</th>
+            <th>Descripcion</th>
+          </tr>
+        </table>
+        <table id="lista">
+
+<!-- Aqui vienen los articulos que coincidan con la busqueda. -->       
+
+        </table>
+      </div>
+      
+      <div class="input">
+        <table id="seleccion">
+          <!-- Aqui vienen los articulos seleccionados -->
+        </table>
+      </div>
+
+      <div class="input">
+        <button id="cargar" name="submit" type="submit">CARGAR</button>
+      </div>
+      
+    </from>
+    
+    <script src="/javascripts/codigoArticulo.js"></script> 
+  <script src="/javascripts/addArticulos.js"></script>
+  </body>
+  </html>
+  
